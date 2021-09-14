@@ -1,12 +1,12 @@
 name: GitHub Actions Demo
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
     
 jobs:
-    Build_and_Scan_Vuln:
+    build:
         runs-on: ubuntu-latest
         steps:
          - name: Check out the repo
@@ -35,10 +35,6 @@ jobs:
              fail_if_high_vulnerabilities_found: false
              fail_if_medium_vulnerabilities_found: false
 
-    Deploy_to_EKS:
-        needs: Build_and_Scan_Vuln
-        runs-on: ubuntu-latest
-        steps:
          - name: Login to DockerHub
            uses: docker/login-action@v1
            with:
