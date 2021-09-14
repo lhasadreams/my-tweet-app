@@ -6,7 +6,7 @@ on:
     branches: [ main ]
     
 jobs:
-    Build code and container:
+    Build_container:
         runs-on: ubuntu-latest
         steps:
          - name: Check out the repo
@@ -21,7 +21,7 @@ jobs:
              tags: jeromebaude/my-tweet-app-lacework:${{ env.GHA_SHA }},jeromebaude/my-tweet-app-lacework:latest
              load: true
 
-    Check vulnerabilty with Lacework scanner:
+    Check_vulnerabilties:
         runs-on: ubuntu-latest
         steps:
          - name: lw-scanner
@@ -38,7 +38,7 @@ jobs:
              fail_if_high_vulnerabilities_found: false
              fail_if_medium_vulnerabilities_found: false
 
-    Push to the Registry and deploy to EKS:
+    Push_to_the_Registry_and_deploy_to_EKS:
         runs-on: ubuntu-latest
         steps:
          - name: Login to DockerHub
