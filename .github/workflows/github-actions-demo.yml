@@ -21,7 +21,7 @@ jobs:
              tags: jeromebaude/my-tweet-app-lacework:${{ env.GHA_SHA }},jeromebaude/my-tweet-app-lacework:latest
              load: true
 
-    Check_vulnerabilties:
+    Check_vulnerabilities:
         needs: Build_container
         runs-on: ubuntu-latest
         steps:
