@@ -1,12 +1,12 @@
 name: GitHub Actions Demo
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     
 jobs:
-    build:
+    Build_Scan_and_Deploy:
         runs-on: ubuntu-latest
         steps:
          - name: Check out the repo
