@@ -6,7 +6,7 @@ on:
     branches: [ main ]
     
 jobs:
-    Build_container:
+    Build_and_Scan_Vulnerabilities:
         runs-on: ubuntu-latest
         steps:
          - name: Check out the repo
@@ -21,10 +21,6 @@ jobs:
              tags: jeromebaude/my-tweet-app-lacework:${{ env.GHA_SHA }},jeromebaude/my-tweet-app-lacework:latest
              load: true
 
-    Check_vulnerabilities:
-        needs: Build_container
-        runs-on: ubuntu-latest
-        steps:
          - name: lw-scanner
            uses: timarenz/lw-scanner-action@v0.2.2
            env:
@@ -40,7 +36,7 @@ jobs:
              fail_if_medium_vulnerabilities_found: false
 
     Deploy_to_EKS:
-        needs: Check_vulnerabilities
+        needs: Build_and_Scan_Vulnerabilities
         runs-on: ubuntu-latest
         steps:
          - name: Login to DockerHub
