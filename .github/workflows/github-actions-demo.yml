@@ -22,6 +22,7 @@ jobs:
              load: true
 
     Check_vulnerabilties:
+        needs: Build_container
         runs-on: ubuntu-latest
         steps:
          - name: lw-scanner
@@ -38,7 +39,8 @@ jobs:
              fail_if_high_vulnerabilities_found: false
              fail_if_medium_vulnerabilities_found: false
 
-    Push_to_the_Registry_and_deploy_to_EKS:
+    Deploy_to_EKS:
+        needs: Check-vulnerabilities
         runs-on: ubuntu-latest
         steps:
          - name: Login to DockerHub
