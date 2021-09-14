@@ -40,7 +40,7 @@ jobs:
              fail_if_medium_vulnerabilities_found: false
 
     Deploy_to_EKS:
-        needs: Check-vulnerabilities
+        needs: Check_vulnerabilities
         runs-on: ubuntu-latest
         steps:
          - name: Login to DockerHub
