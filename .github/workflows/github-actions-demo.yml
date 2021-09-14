@@ -6,7 +6,7 @@ on:
     branches: [ main ]
     
 jobs:
-    Build_and_Scan_Vulnerabilities:
+    Build_and_Scan_Vuln:
         runs-on: ubuntu-latest
         steps:
          - name: Check out the repo
@@ -36,7 +36,7 @@ jobs:
              fail_if_medium_vulnerabilities_found: false
 
     Deploy_to_EKS:
-        needs: Build_and_Scan_Vulnerabilities
+        needs: Build_and_Scan_Vuln
         runs-on: ubuntu-latest
         steps:
          - name: Login to DockerHub
