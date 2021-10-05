@@ -1,9 +1,6 @@
 # Use Alpine as base
 FROM alpine:latest
 
-# Maintainer
-MAINTAINER andreas@lacework.net
-
 # Install python and pip
 RUN apk add --update py3-pip
 

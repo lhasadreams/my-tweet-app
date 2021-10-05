@@ -37,6 +37,6 @@ spec:
     spec:
       containers:
       - name: my-tweet-app
-        image: jeromebaude/my-tweet-app-lacework:latest
+        image: toontje/my-tweet-app-lacework:latest
         ports:
         - containerPort: 5000
