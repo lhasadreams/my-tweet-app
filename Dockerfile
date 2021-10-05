@@ -1,11 +1,11 @@
 # Use Alpine as base
-FROM alpine:3.10
+FROM alpine:latest
 
 # Install python and pip
-RUN apk add --update py2-pip
+RUN apk add --update py3-pip
 
 # Upgrade pip
-RUN pip install --upgrade pip
+RUN pip3 install --upgrade pip
 
 # Install Python modules needed by the Python app
 COPY requirements.txt /usr/src/app/
