@@ -22,7 +22,7 @@ jobs:
              tags: toontje/my-tweet-app-lacework:${{ env.GHA_SHA }},toontje/my-tweet-app-lacework:latest
              load: true
 
-         - name: lw-scanner
+         - name: Lacework vulnerability scan
            uses: timarenz/lw-scanner-action@v0.2.2
            env:
              LW_ACCOUNT_NAME: ${{ secrets.LW_ACCOUNT_NAME }}
@@ -55,14 +55,14 @@ jobs:
              aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
              aws-region: eu-central-1
 
-         - name: deploy to cluster
+         - name: Deploy to cluster
            uses: kodermax/kubectl-aws-eks@master
            env:
              KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
            with:
-             args: set image deployment/my-tweet-app my-tweet-app-lacework=toontje/my-tweet-app-lacework:${{ env.GHA_SHA }} -n lacework
+             args: set image deployment/my-tweet-app my-tweet-app=toontje/my-tweet-app-lacework:${{ env.GHA_SHA }} -n lacework
 
-         - name: verify deployment
+         - name: Verify deployment
            uses: kodermax/kubectl-aws-eks@master
            env:
              KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
