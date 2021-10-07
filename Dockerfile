@@ -1,15 +1,15 @@
 # Use Alpine as base
-FROM alpine:3.10
+FROM alpine:latest
 
 # Install python and pip
-RUN apk add --update py2-pip
+RUN apk add --update py3-pip
 
 # Upgrade pip
-RUN pip install --upgrade pip
+RUN pip3 install --upgrade pip
 
 # Install Python modules needed by the Python app
 COPY requirements.txt /usr/src/app/
-RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
+RUN pip3 install --no-cache-dir -r /usr/src/app/requirements.txt
 
 # Copy files required for the app to run
 COPY app.py /usr/src/app/
@@ -30,4 +30,4 @@ EXPOSE 5000
 # HEALTHCHECK CMD curl --fail http://localhost:5000/ || exit 1
 
 # Run the application
-CMD ["python", "/usr/src/app/app.py"]
+CMD ["python3", "/usr/src/app/app.py"]
