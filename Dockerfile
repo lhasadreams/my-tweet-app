@@ -5,11 +5,11 @@ FROM alpine:latest
 RUN apk add --update py3-pip
 
 # Upgrade pip
-RUN pip3 install --upgrade pip
+RUN pip install --upgrade pip
 
 # Install Python modules needed by the Python app
 COPY requirements.txt /usr/src/app/
-RUN pip3 install --no-cache-dir -r /usr/src/app/requirements.txt
+RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
 
 # Copy files required for the app to run
 COPY app.py /usr/src/app/
