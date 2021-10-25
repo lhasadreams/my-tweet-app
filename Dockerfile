@@ -1,4 +1,4 @@
-## Use Alpine as base
+# Use Alpine as base
 FROM alpine:latest
 
 # Install python and pip
