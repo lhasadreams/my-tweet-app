@@ -6,7 +6,7 @@
     [
 
         {
-        "label": "Lacework: Build Docker image for vulnerability scanning",
+        "label": "Pacework: Build Docker image for vulnerability scanning",
         "type": "docker-build",
         "dockerBuild": {
             "context": "${workspaceFolder}",
