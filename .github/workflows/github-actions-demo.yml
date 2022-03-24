@@ -23,7 +23,7 @@ jobs:
              load: true
 
          - name: Lacework vulnerability scan
-           uses: lacework/lacework-inline-scanner@latest
+           uses: lacework/lw-scanner-action@0.6.0
            env:
              LW_ACCOUNT_NAME: ${{ secrets.LW_ACCOUNT_NAME }}
              LW_ACCESS_TOKEN: ${{ secrets.LW_ACCESS_TOKEN }}
