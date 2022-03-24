@@ -6,10 +6,10 @@ app = Flask(__name__)
 
 # list of cat images
 images = [
-    "https://raw.githubusercontent.com/toontjem/my-tweet-app/master/Pictures/la110.png",
-    "https://raw.githubusercontent.com/toontjem/my-tweet-app/master/Pictures/PNGFILE-01.png",
-    "https://raw.githubusercontent.com/toontjem/my-tweet-app/master/Pictures/NoRulesShirtPNG.png",
-    "https://raw.githubusercontent.com/toontjem/my-tweet-app/master/Pictures/D136Beachoopwithoutman.png"
+    "https://raw.githubusercontent.com/toontjem/my-tweet-app/master/Pictures/1.png",
+    "https://raw.githubusercontent.com/toontjem/my-tweet-app/master/Pictures/2.png",
+    "https://raw.githubusercontent.com/toontjem/my-tweet-app/master/Pictures/3.png",
+    "https://raw.githubusercontent.com/toontjem/my-tweet-app/master/Pictures/4.png"
 ]
 
 @app.route('/')
