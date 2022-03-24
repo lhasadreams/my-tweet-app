@@ -24,10 +24,9 @@ jobs:
 
          - name: Lacework vulnerability scan
            uses: lacework/lw-scanner-action@v0.7.1
-           env:
+           with:
              LW_ACCOUNT_NAME: ${{ secrets.LW_ACCOUNT_NAME }}
              LW_ACCESS_TOKEN: ${{ secrets.LW_ACCESS_TOKEN }}
-           with:
              image_name: toontjem/my-tweet-app
              image_tag: ${{ env.GHA_SHA }}
              scan_library_packages: true
