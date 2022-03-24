@@ -30,7 +30,7 @@ jobs:
              image_name: toontjem/my-tweet-app
              image_tag: ${{ env.GHA_SHA }}
              scan_library_packages: true
-             SEVERITY_THRESHOLD: critical,high
+             SEVERITY_THRESHOLD: high
 
          - name: Login to DockerHub
            uses: docker/login-action@v1
