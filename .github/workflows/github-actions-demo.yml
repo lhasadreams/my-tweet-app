@@ -29,7 +29,6 @@ jobs:
              LW_ACCESS_TOKEN: ${{ secrets.LW_ACCESS_TOKEN }}
              image_name: toontjem/my-tweet-app
              image_tag: ${{ env.GHA_SHA }}
-             scan_library_packages: true
              SEVERITY_THRESHOLD: high
 
          - name: Login to DockerHub
