@@ -1,8 +1,8 @@
 # Use Alpine as base
-FROM alpine:latest
+FROM alpine:3.10
 
 # Install python and pip
-RUN apk add --update py3-pip
+RUN apk add --update py-pip
 
 # Upgrade pip
 RUN pip install --upgrade pip
@@ -22,4 +22,4 @@ COPY Pictures /usr/src/app/Pictures
 EXPOSE 5000
 
 # Run the application
-CMD ["python3", "/usr/src/app/app.py"]
+CMD ["python", "/usr/src/app/app.py"]
