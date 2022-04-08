@@ -27,7 +27,7 @@ jobs:
            with:
              LW_ACCOUNT_NAME: ${{ secrets.LW_ACCOUNT_NAME }}
              LW_ACCESS_TOKEN: ${{ secrets.LW_ACCESS_TOKEN }}
-             image_name: toontjem/my-tweet-app
+             image_name: lhasadreams/my-tweet-app
              image_tag: ${{ env.GHA_SHA }}
              SEVERITY_THRESHOLD: critical
 
