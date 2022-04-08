@@ -31,7 +31,7 @@ jobs:
              LW_ACCESS_TOKEN: ${{ secrets.LW_ACCESS_TOKEN }}
              image_name: lhasadreams/my-tweet-app
              image_tag: ${{ env.GHA_SHA }}
-             SEVERITY_THRESHOLD: critical
+             SEVERITY_THRESHOLD: high
 
         #  - name: Login to DockerHub
         #    uses: docker/login-action@v1
