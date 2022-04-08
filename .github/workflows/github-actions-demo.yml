@@ -1,7 +1,9 @@
 name: GitHub Actions Demo
 on:
   push:
-    branches: [ main ]
+    branches:
+    - main
+    - afd-dev
   pull_request:
     branches: [ main ]
     
